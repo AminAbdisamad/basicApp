@@ -38,7 +38,15 @@ class _QuotesState extends State<Quotes> {
         padding: const EdgeInsets.all(18.0),
         child: Column(
          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: quotes.map((quote)=> QuoteCard(quote: quote)).toList(),
+          children: quotes.map((quote)=> QuoteCard(
+            quote: quote,
+            delete:(){
+              setState(() {
+                quotes.remove(quote);
+              });
+            }
+            
+            )).toList(),
         ),
       )
     );

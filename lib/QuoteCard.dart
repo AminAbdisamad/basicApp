@@ -4,7 +4,8 @@ import "Quote.dart";
 class QuoteCard extends StatelessWidget {
  
   final Quote quote;
-  QuoteCard({this.quote});
+  final Function delete;
+  QuoteCard({this.quote,this.delete});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,18 @@ class QuoteCard extends StatelessWidget {
               fontWeight: FontWeight.bold
               
             )
-            )
+            ),
+            SizedBox(height:8.0),
+            SizedBox(
+              height: 40.0,
+              width: 40.0,
+              child: FloatingActionButton(onPressed: delete,
+              backgroundColor: Colors.red[300],
+              child: Icon(Icons.delete),
+
+            ),
+            ),
+            
           ],
         ),
       ),
